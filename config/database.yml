@@ -1,0 +1,25 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  host: <%= ENV['POSTGRES_HOST'] %>
+  database: <%= ENV['DB_DEV_NAME'] %>
+  pool: 35
+  timeout: 10000
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PWD'] %>
+
+test:
+  adapter:  postgresql
+  host:     <%= ENV['POSTGRES_HOST'] %>
+  encoding: unicode
+  database: <%= ENV['DB_TEST_NAME'] %>
+  pool:     5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PWD'] %>
+  template: template0
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+
