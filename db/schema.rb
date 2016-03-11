@@ -11,4 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20160310132616) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "ip2_location_v4s", id: false, force: :cascade do |t|
+    t.integer "ip_from",      limit: 8,  null: false
+    t.integer "ip_to",        limit: 8,  null: false
+    t.string  "country_code", limit: 2,  null: false
+    t.string  "country_name", limit: 64, null: false
+  end
+
+  create_table "ip2_location_v6s", id: false, force: :cascade do |t|
+    t.decimal "ip_from",                 precision: 39, null: false
+    t.decimal "ip_to",                   precision: 39, null: false
+    t.string  "country_code", limit: 2,                 null: false
+    t.string  "country_name", limit: 64,                null: false
+  end
+
+end

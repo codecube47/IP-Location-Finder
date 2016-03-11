@@ -16,6 +16,9 @@ gem 'pg'
 
 gem "puma"
 
+gem 'rubyzip'
+# gem 'postgres-copy'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4'
