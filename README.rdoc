@@ -8,21 +8,20 @@ Installation
 
     rails s
 
-API URL:
-
-    http://localhost:3000/api/v1/geolocations/:ip
-Example:
-
-    http://localhost:3000/api/v1/geolocations/175.157.254.70                                                                                                                                                               
-
-Schedule download ip2location ( http://www.ip2location.com/ ) database to local database
+Download ip2location ( http://www.ip2location.com/ ) database to local database
 
     rake ip2location:download_v4   
 
 Download ipv6 database to local database
 
     rake ip2location:download_v6 
-    
+
+API URL:
+
+    http://localhost:3000/api/v1/geolocations/:ip
+Example:
+
+    http://localhost:3000/api/v1/geolocations/175.157.254.70                                                                                                                                                           
 rspec test :
 
     bundle exec rspec spec/controllers
