@@ -20,9 +20,9 @@ class API::V1::GeolocationsController < ApplicationController
   def get_location version, int_ip
        case version
            when "v4"
-             {:location =>Ip2LocationV4.gel_location(int_ip), :status=>200}
+             Ip2LocationV4.gel_location(int_ip).as_json.merge(:status=>200)
            when "v6"
-             {:location =>Ip2LocationV6.gel_location(int_ip), :status=>200}
+             Ip2LocationV6.gel_location(int_ip).as_json.merge(:status=>200)
         end
   end
 end
