@@ -1,28 +1,34 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
 
-Things you may want to cover:
+    git clone https://github.com/vusaalab/IP-Location-Finder.git
 
-* Ruby version
+    rails db:migrate
 
-* System dependencies
+    rails s
 
-* Configuration
+Download ip2location ( http://www.ip2location.com/ ) database to local database
 
-* Database creation
+    rake ip2location:download_v4   
 
-* Database initialization
+Download ipv6 database to local database
 
-* How to run the test suite
+    rake ip2location:download_v6 
 
-* Services (job queues, cache servers, search engines, etc.)
+API URL:
 
-* Deployment instructions
+    http://localhost:3000/api/v1/geolocations/:ip
+Example:
+ IPV4
+ 
+     http://localhost:3000/api/v1/geolocations/175.157.254.70 
+    
+ IPV6
+ 
+     http://localhost:3000/api/v1/geolocations/2601:9:7680:363:75df:f491:6f85:352f                                                                            
+rspec test :
 
-* ...
+    bundle exec rspec spec/controllers
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+LIVE demo https://geolocations.herokuapp.com/api/v1/geolocations/175.157.254.70
